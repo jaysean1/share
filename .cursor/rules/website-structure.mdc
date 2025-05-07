@@ -1,0 +1,40 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Personal Website Structure
+
+This is a personal resume website for Sui Qian, a senior product manager with expertise in AI and IoT.
+
+## Main HTML File
+The entire website is contained in [html/personal_website/qiansji_cv.html](mdc:html/personal_website/qiansji_cv.html).
+
+## Website Sections
+The website is organized into the following sections:
+
+1. **Navigation Bar** - Fixed navigation at the top
+2. **Home/Hero Section** - Introduction and headline (#home)
+3. **About Me Section** - Personal introduction and skills (#about)
+4. **Experience Section** - Work history at Alibaba (#experience)
+5. **Projects Section** - Key professional projects (#projects)
+6. **Achievements & Patents Section** - Metrics and patents (#achievements)
+7. **Personal Projects Section** - Side projects and portfolio (#personal-projects)
+8. **Education Section** - Academic background (#education)
+9. **Contact Section** - Contact information (#contact)
+10. **Footer** - Copyright and additional navigation
+
+## Technologies Used
+- HTML5
+- CSS3 (with animations and transitions)
+- Tailwind CSS (via CDN)
+- Font Awesome (for icons)
+- ECharts (for data visualization)
+- Vanilla JavaScript (for animations and counters)
+
+## Key Features
+- Responsive design for different screen sizes
+- Smooth scrolling navigation
+- Fade-in animations on scroll
+- Animated counters for statistics
+- Timeline-style layout for experience section

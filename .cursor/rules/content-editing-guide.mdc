@@ -1,0 +1,115 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Content Editing Guide
+
+This guide explains how to update content on Sui Qian's personal resume website.
+
+## Key Content Sections
+
+The following sections in [html/personal_website/qiansji_cv.html](mdc:html/personal_website/qiansji_cv.html) contain content that may need updates:
+
+### Personal Information
+- **Name**: Located in the navbar and hero section
+- **Title/Role**: In the hero section and footer
+- **Profile Image**: In the About section (URL in the `src` attribute)
+- **Contact Information**: In the Contact section and footer
+
+### Professional Experience
+Experience entries are structured as `.timeline-item` elements within the Experience section:
+
+```html
+<div class="timeline-item">
+  <div class="bg-white p-6 rounded-lg shadow-sm">
+    <h3 class="text-xl font-bold text-gray-900">Company Name - Department</h3>
+    <p class="text-gray-600 mt-1">Date Range | Location</p>
+    <div class="mt-4">
+      <p class="text-gray-700 mb-4">Role description</p>
+      <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li>Achievement with <strong class="font-bold text-primary">highlighted metrics</strong></li>
+        <!-- More achievements -->
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+### Projects
+Projects are displayed as cards in the Projects section:
+
+```html
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+  <img src="image-url" alt="Project Name" class="w-full h-48 object-cover">
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-gray-900 mb-2">Project Name</h3>
+    <p class="text-gray-700 mb-4">Project description with <strong class="font-bold text-primary">highlighted metrics</strong></p>
+    <a href="project-url" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 !rounded-button bg-primary text-white font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+      Learn More
+      <i class="fas fa-arrow-right ml-2"></i>
+    </a>
+  </div>
+</div>
+```
+
+### Personal Projects
+Personal projects use a different layout with image and content side-by-side:
+
+```html
+<div class="bg-white rounded-lg shadow-sm overflow-hidden flex">
+  <img src="image-url" alt="Project Name" class="w-1/2 object-cover">
+  <div class="p-6 w-1/2">
+    <h3 class="text-xl font-bold text-gray-900 mb-4">Project Name</h3>
+    <p class="text-gray-700 mb-4">Project description</p>
+    <ul class="space-y-2 text-gray-700 mb-6">
+      <li>• Feature one</li>
+      <!-- More features -->
+    </ul>
+    <a href="#" class="inline-flex items-center px-6 py-3 !rounded-button bg-primary text-white font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+      View Details
+      <i class="fas fa-arrow-right ml-2"></i>
+    </a>
+  </div>
+</div>
+```
+
+### Achievement Metrics
+Numerical achievements are displayed with animated counters:
+
+```html
+<div class="text-center">
+  <div class="text-4xl font-bold text-primary mb-2" data-count="21000000">0</div>
+  <p class="text-gray-700">Metric Description</p>
+</div>
+```
+
+The `data-count` attribute defines the target number for the animation.
+
+## Styling Text
+
+- Regular text uses Tailwind classes like `text-gray-700`
+- Important metrics or keywords use `<strong class="font-bold text-primary">highlighted text</strong>`
+- Section titles use `text-3xl font-bold text-center text-gray-900 mb-16`
+- Subsection titles use `text-xl font-bold text-gray-900 mb-2`
+
+## Adding New Sections
+
+To add a new section, follow this template:
+
+```html
+<section id="section-id" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="fade-in">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-16">Section Title</h2>
+      <!-- Section content here -->
+    </div>
+  </div>
+</section>
+```
+
+Remember to add a corresponding navigation link in the navbar:
+
+```html
+<a href="#section-id" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Section Title</a>
+```

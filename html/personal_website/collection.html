@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sui Qian - 作品集合</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            secondary: '#3b82f6'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      min-height: 1024px;
+    }
+    .nav-link {
+      color: #4b5563;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      position: relative;
+    }
+    .nav-link:hover {
+      color: #2563eb;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #2563eb;
+      transition: width 0.3s;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .project-card {
+      background-color: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .project-card:hover {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <nav class="fixed top-0 w-full bg-white bg-opacity-95 shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0">
+          <span class="text-2xl font-['Pacifico'] text-primary">Sui Qian</span>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About Me</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#achievements" class="nav-link">Achievements &amp; Patents</a>
+            <a href="#personal-projects" class="nav-link">Personal Projects</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-32 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold text-center text-gray-900 mb-16 fade-in">作品集合展示</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="fade-in project-card">
+          <div class="relative">
+            <img src="path/to/project1.jpg" alt="项目1" class="w-full h-64 object-cover">
+            <span class="absolute top-4 right-4 bg-primary/90 text-white px-3 py-1 rounded-full text-sm">项目标签</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">项目标题1</h3>
+            <p class="text-gray-600 text-sm mb-4">项目描述...</p>
+            <div class="flex gap-3">
+              <a href="#" class="flex-1 text-center px-4 py-2 !rounded-button bg-primary text-white hover:bg-primary/90 text-sm">演示</a>
+              <a href="#" class="flex-1 text-center px-4 py-2 !rounded-button border border-primary text-primary hover:bg-primary/10 text-sm">案例</a>
+            </div>
+          </div>
+        </div>
+        <!-- 其他项目卡片可以在此处添加 -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <span class="text-2xl font-['Pacifico'] text-white mb-4 block">Sui Qian</span>
+          <p class="text-gray-400"><strong class="font-bold text-primary">Senior Internet Product Manager</strong> | <strong class="font-bold text-primary">AI &amp; IoT Expert</strong></p>
+        </div>
+        <div class="text-center">
+          <h3 class="text-lg font-medium mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#about" class="text-gray-400 hover:text-white">About Me</a></li>
+            <li><a href="#experience" class="text-gray-400 hover:text-white">Experience</a></li>
+            <li><a href="#projects" class="text-gray-400 hover:text-white">Projects</a></li>
+            <li><a href="#personal-projects" class="text-gray-400 hover:text-white">Personal Projects</a></li>
+          </ul>
+        </div>
+        <div class="text-right">
+          <h3 class="text-lg font-medium mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li class="text-gray-400"><strong class="font-bold text-primary">Email:</strong> jaysean.qian@gmail.com</li>
+            <li class="text-gray-400"><strong class="font-bold text-primary">Phone:</strong> +86-159-8817-1024</li>
+            <li class="text-gray-400"><strong class="font-bold text-primary">Address:</strong> Chaoyang District, Beijing</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+        <p class="text-gray-400">&copy; 2024 Personal Resume Website. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      });
+      fadeElements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>悉尼 SEEK 求职自动化实践</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body { background-color: #f9fafb; font-family: 'Inter', sans-serif; }
+    .highlight { background-color: #fef9c3; padding: 0.1em 0.3em; border-radius: 0.25rem; font-weight: 600; }
+    .code-block { background-color: #1e293b; color: #e2e8f0; border-radius: 0.5rem; padding: 1.5rem; overflow-x: auto; margin: 1.5rem 0; position: relative; }
+    .code-block::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #2563eb, #8b5cf6, #ec4899); border-radius: 0.5rem 0.5rem 0 0; }
+    blockquote { border-left: 4px solid #d1d5db; padding-left: 1rem; margin: 1rem 0; color: #4b5563; font-style: italic; }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans leading-normal tracking-normal">
+  <div class="container mx-auto max-w-4xl p-6 bg-white shadow-lg rounded-lg my-10">
+    <!-- Hero Section -->
+    <div class="flex flex-col md:flex-row items-center mb-8 bg-blue-50 rounded-lg min-h-[380px] px-6 py-10 md:py-16 md:px-12">
+      <div class="md:w-1/2 mb-8 md:mb-0 md:pr-10 flex flex-col justify-center">
+        <h1 class="text-4xl font-bold text-gray-800 flex items-center mb-4">
+          <i data-lucide="search" class="mr-3 text-blue-600"></i>
+          <span>Sydney SEEK Job Automation</span>
+        </h1>
+        <p class="text-lg text-gray-700">Use automation scripts and AI tools to greatly improve job search efficiency on the SEEK platform in Australia. Help both technical and non-technical people find jobs efficiently.</p>
+      </div>
+      <div class="md:w-1/2 flex justify-center items-center">
+        <div class="bg-white rounded-xl shadow-md p-4 md:p-6 flex items-center justify-center w-full max-w-md">
+          <img src="../../public/seek-job/working-digital-whiteboard.svg" alt="SEEK 自动化 Hero" class="w-full h-auto max-h-72">
+        </div>
+      </div>
+    </div>
+    <h1 class="text-4xl font-bold text-gray-800 mb-6 flex items-center">
+      <i data-lucide="search" class="mr-3 text-blue-600"></i>Sydney SEEK Job Automation: From Crawling Jobs to Smart Cover Letter Generation
+    </h1>
+    <p class="text-lg text-gray-700 mb-8">This article shows how to use automation scripts and AI tools to greatly improve job search efficiency on the SEEK platform in Australia. It is suitable for people with a technical background, and non-technical people can also work with technical partners to achieve this.</p>
+    <section class="mb-10">
+      <h2 class="text-3xl font-semibold text-gray-700 mb-4 flex items-center">
+        <i data-lucide="info" class="mr-2 text-green-600"></i>Background
+      </h2>
+      <p class="text-gray-700 leading-relaxed mb-4">Next month, in June, I will move to Sydney, so I need to find a job there. After learning about online job sites in Sydney, I found <span class="highlight">seek.com.au</span>, the largest job site in Australia. After uploading my resume, I quickly realized it is different from Chinese job sites. The biggest difference is that there are not many agents on SEEK. The job postings come directly from employers, and you need to apply by yourself, not just wait for headhunters to contact you.</p>
+    </section>
+    <section class="mb-10">
+      <h2 class="text-3xl font-semibold text-gray-700 mb-8 flex items-center">
+        <i data-lucide="list" class="mr-2 text-blue-600"></i>Automated Job Search Process
+      </h2>
+      <div class="border border-gray-200 rounded-lg shadow-md overflow-hidden my-6">
+        <img src="../../public/seek-job/work_flow.png" alt="Job Search Workflow Diagram" class="w-full h-auto bg-black">
+      </div>
+      <div class="relative pl-8">
+        <div class="absolute left-3 top-2 bottom-2 w-1 bg-blue-100 rounded"></div>
+        <div class="space-y-10">
+          <div class="relative flex items-start">
+            <span class="absolute left-0 top-2 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center shadow"><i data-lucide="list-check" class="text-white"></i></span>
+            <div class="ml-10">
+              <div class="text-lg font-semibold text-blue-700">1. Get Job List</div>
+              <div class="text-gray-700">Crawl job postings on the SEEK homepage to get the <span class="highlight">job lists</span>.</div>
+            </div>
+          </div>
+          <div class="relative flex items-start">
+            <span class="absolute left-0 top-2 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center shadow"><i data-lucide="file-text" class="text-white"></i></span>
+            <div class="ml-10">
+              <div class="text-lg font-semibold text-green-700">2. Get Job Details</div>
+              <div class="text-gray-700">Use the <span class="highlight">python requests</span> library to get the <span class="highlight">job description</span>.</div>
+            </div>
+          </div>
+          <div class="relative flex items-start">
+            <span class="absolute left-0 top-2 w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center shadow"><i data-lucide="star" class="text-white"></i></span>
+            <div class="ml-10">
+              <div class="text-lg font-semibold text-yellow-700">3. Smart Matching and Scoring</div>
+              <div class="text-gray-700">Use a large model to analyze the job description and match it with my resume, scoring each job.</div>
+            </div>
+          </div>
+          <div class="relative flex items-start">
+            <span class="absolute left-0 top-2 w-6 h-6 rounded-full bg-pink-500 flex items-center justify-center shadow"><i data-lucide="mail" class="text-white"></i></span>
+            <div class="ml-10">
+              <div class="text-lg font-semibold text-pink-700">4. Auto Generate Cover Letter</div>
+              <div class="text-gray-700">If the job score is above 80, generate a cover letter based on the job description and my resume, and refer to <span class="highlight">how to write a cover letter</span>.</div>
+            </div>
+          </div>
+          <div class="relative flex items-start">
+            <span class="absolute left-0 top-2 w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center shadow"><i data-lucide="send" class="text-white"></i></span>
+            <div class="ml-10">
+              <div class="text-lg font-semibold text-indigo-700">5. Batch Apply</div>
+              <div class="text-gray-700">Finally, generate a <span class="highlight">targeted job list</span> and apply one by one.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mb-10">
+      <h2 class="text-3xl font-semibold text-gray-700 mb-4 flex items-center">
+        <i data-lucide="settings" class="mr-2 text-purple-600"></i>Implementation Steps
+      </h2>
+      <div class="bg-blue-50 border border-blue-200 rounded-lg shadow-md p-5 mb-4">
+        <h3 class="text-xl font-semibold text-blue-700 mt-8 mb-2 flex items-center"><i data-lucide="list-check" class="mr-2 text-blue-500"></i>1. Get Job List</h3>
+        <div class="flex items-start mb-4">
+          <i data-lucide="info" class="text-blue-400 mr-3 mt-1"></i>
+          <blockquote class="border-l-4 border-blue-300 pl-4 bg-blue-100/60 rounded text-blue-900 text-base leading-relaxed">
+            Manually screening a large number of job postings on the SEEK homepage is very inefficient. So, I run a custom JavaScript script in the browser console to batch grab all job card titles, companies, and links. <span class="highlight">No API login or extra dependencies needed</span>, just paste the script to export the job list in one click, which greatly improves the initial screening efficiency.
+            <br><span class="font-semibold text-blue-700">Tips:</span> Since SEEK job info is dynamically loaded and requires login, it is recommended to use the browser console for quick batch data collection.
+          </blockquote>
+        </div>
+        <div class="code-block"><code>(function(){
+   // 1. 在这里填写本次页面的 class 名称
+   const classes = {
+     card: "gg45di0 _1ubeeig93 _1ubeeig7z _1ubeeigbb _1ubeeiga7 _1ubeeig5f w39xvk4 w39xvk5 w39xvk6",
+     jobTitle: "gg45di0",
+     jobAdvertiser: "gg45di0 _1ubeeig4z _1oxsqkd0 _1oxsqkd1 _1oxsqkd22 _18ybopc4 _1oxsqkda",
+     recommendedJobLink:"gg45di0 gg45dif  gg45di0 gg45dif w39xvk9 _1ubeeig5j _1ubeeigj _1ubeeigk _1ubeeigl _1ubeeigm _1ubeeig7"
+   };
+   function sel(cls){ return "." + cls.trim().split(/\s+/).join("."); }
+   const cards = document.querySelectorAll(sel(classes.card));
+   const data = Array.from(cards).map(card => ({
+     jobTitle: card.querySelector('[data-automation="jobTitle"]')?.innerText.trim() || "",
+     jobAdvertiser: card.querySelector(sel(classes.jobAdvertiser))?.innerText.trim() || "",
+     recommendedJobLink: card.querySelector(sel(classes.recommendedJobLink))?.href || ""
+   }));
+   console.log(JSON.stringify(data, null, 2));
+})();</code></div>
+        <div class="flex items-center text-blue-700 mt-2 mb-2">
+          <i data-lucide="info" class="mr-2 text-blue-400"></i>
+          <span class="font-semibold">Tips:</span>
+          <span class="ml-1">You can use Chrome console to quickly batch get job data</span>
+        </div>
+        <img src="../../public/seek-job/get_job_list.png" alt="职位列表爬取效果" class="rounded-lg shadow-md my-4">
+        <div class="flex items-center text-gray-600 mb-2 text-sm">
+          <i data-lucide="image" class="mr-2 text-blue-400"></i>Job list crawling effect
+        </div>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-lg shadow-md p-5 mb-4">
+        <h3 class="text-xl font-semibold text-green-700 mt-8 mb-2 flex items-center"><i data-lucide="file-text" class="mr-2 text-green-500"></i>2. Get Job Details</h3>
+        <div class="flex items-start mb-4">
+          <i data-lucide="alert-circle" class="text-green-400 mr-3 mt-1"></i>
+          <blockquote class="border-l-4 border-green-300 pl-4 bg-green-100/60 rounded text-green-900 text-base leading-relaxed">
+            After getting the job list, the next step is to batch get the detailed description of each job. Use <span class="highlight">Python requests</span> with <span class="highlight">BeautifulSoup4</span> to simulate browser requests and parse HTML, accurately extracting job detail text.<br>
+            <span class="font-semibold text-green-700">Note:</span> SEEK job detail pages are complex. First use the <span class="highlight">data-automation</span> attribute to locate content, and if that fails, fall back to parsing JSON-LD. All results are written back to a local JSON file for later processing.
+          </blockquote>
+        </div>
+        <div class="code-block"><code>import json
+import requests
+from bs4 import BeautifulSoup
+import os
+# ... 省略部分代码 ...
+for job in jobs:
+    url = job.get('recommendedJobLink')
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=10)
+        resp.raise_for_status()
+    except Exception as e:
+        print(f"Failed to fetch {url}: {e}")
+        job['jobDetails'] = ''
+        continue
+    soup = BeautifulSoup(resp.text, 'html.parser')
+    detail_div = soup.find(attrs={ 'data-automation': 'jobAdDetails' })
+    if detail_div:
+        job['jobDetails'] = detail_div.get_text(separator='\n').strip()
+    # ... 省略 ...</code></div>
+        <img src="../../public/seek-job/get_job_detail.png" alt="职位详情抓取示意" class="rounded-lg shadow-md mb-2">
+        <p class="text-gray-500 mb-2 text-sm">Job detail crawling example</p>
+        <img src="../../public/seek-job/job_detail.png" alt="职位详情页面截图" class="rounded-lg shadow-md mb-4">
+        <p class="text-gray-500 mb-8 text-sm">Job detail page screenshot</p>
+      </div>
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg shadow-md p-5 mb-4">
+        <h3 class="text-xl font-semibold text-yellow-700 mt-8 mb-2 flex items-center"><i data-lucide="star" class="mr-2 text-yellow-500"></i>3. Smart Job-Resume Matching & Scoring</h3>
+        <div class="flex items-start mb-4">
+          <i data-lucide="check-circle" class="text-yellow-400 mr-3 mt-1"></i>
+          <blockquote class="border-l-4 border-yellow-300 pl-4 bg-yellow-100/60 rounded text-yellow-900 text-base leading-relaxed">
+            With job details and my resume, use a <span class="highlight">large model API</span> to smartly analyze the match between them. Each job is automatically scored (0-100) and a brief reason is given.<br>
+            <span class="font-semibold text-yellow-700">Highlight:</span> Dynamic prompts allow you to update your resume content at any time, ensuring real-time and accurate matching results. Jobs with a score above 80 are automatically added to the target list, and you can generate a customized cover letter for them.
+          </blockquote>
+        </div>
+        <div class="code-block"><code># ... 省略部分代码 ...
+for job in jobs:
+    # ...
+    body = {
+        'model': 'qwen-plus-latest',
+        'messages': [
+            {'role': 'system', 'content': prompt_sys},
+            {'role': 'user', 'content': prompt_user}
+        ]
+    }
+    resp = requests.post(url, headers=headers, json=body, timeout=30)
+    # ...
+    if score &gt;= 80:
+        # 保存匹配结果
+        ...</code></div>
+        <img src="../../public/seek-job/get_score.png" alt="职位与简历匹配打分示意" class="rounded-lg shadow-md mb-4">
+        <p class="text-gray-500 mb-8 text-sm">Job-resume matching and scoring example</p>
+      </div>
+      <div class="bg-pink-50 border border-pink-200 rounded-lg shadow-md p-5 mb-4">
+        <h3 class="text-xl font-semibold text-pink-700 mt-8 mb-2 flex items-center"><i data-lucide="mail" class="mr-2 text-pink-500"></i>4. Auto Generate Cover Letter</h3>
+        <div class="flex items-start mb-4">
+          <i data-lucide="pen-line" class="text-pink-400 mr-3 mt-1"></i>
+          <blockquote class="border-l-4 border-pink-300 pl-4 bg-pink-100/60 rounded text-pink-900 text-base leading-relaxed">
+            For high-scoring jobs, automatically use a <span class="highlight">large model</span> to generate a personalized cover letter. The prompt dynamically includes your resume, job details, and the official cover letter writing guide, making sure the content is professional and fits Australian job habits.<br>
+            <span class="font-semibold text-pink-700">Advantage:</span> The cover letter is fully generated automatically, with a clear structure and strong relevance, which greatly increases the chance of getting an interview. All results are saved as separate markdown files for easy follow-up and batch application.
+          </blockquote>
+        </div>
+        <div class="code-block"><code># ... 省略部分代码 ...
+for job in jobs:
+    # ...
+    body = {
+        'model': 'qwen-plus',
+        'messages': [
+            {'role': 'system', 'content': 'You are an expert in writing cover letters.'},
+            {'role': 'user', 'content': prompt}
+        ],
+        'temperature': 0.7
+    }
+    resp = requests.post(url, headers=headers, json=body, timeout=30)
+    # ...
+    # 保存 cover letter
+    ...</code></div>
+        <img src="../../public/seek-job/generate_coverletter.png" alt="自动生成求职信结果示意" class="rounded-lg shadow-md mb-4">
+        <p class="text-gray-500 mb-8 text-sm">Auto-generated cover letter example</p>
+      </div>
+    </section>
+    <section class="mt-12">
+      <h2 class="text-3xl font-semibold text-gray-700 mb-4 flex items-center"><i data-lucide="check-circle" class="mr-2 text-blue-600"></i>Summary</h2>
+      <p class="text-gray-700 mb-4">With this automated process, I not only saved a lot of time screening and applying for jobs, but also made sure every cover letter is more personalized and targeted. In practice, some companies may have extra questions or use their own recruitment systems, so you can't always apply in bulk, but overall this process greatly reduces repetitive work.</p>
+      <p class="text-gray-700 mb-4">For friends like me who want to find a job in Australia, especially those with a technical background, I strongly recommend using automation and AI tools. Even if you are not a programmer, you can work with technical friends to build your own job search assistant.</p>
+      <p class="text-gray-700 mb-4">In the future, I plan to further optimize the scripts, such as automatically detecting job changes and reminding interview progress. If you are interested in this topic, feel free to leave a comment or discuss more possibilities for automated job search!</p>
+      <p class="text-blue-700 font-semibold">I hope this article gives you some inspiration and help in your job search. Wish you all get your ideal offer!</p>
+      <p class="text-gray-800 font-bold mt-4">Thanks for reading! If you have any questions or suggestions, feel free to leave a comment.</p>
+    </section>
+  </div>
+  <footer class="text-center text-gray-400 text-sm py-6">
+    &copy; 2024 Sui Qian. All rights reserved.
+  </footer>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

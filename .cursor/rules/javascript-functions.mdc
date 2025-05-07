@@ -1,0 +1,88 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# JavaScript Functionality
+
+The website uses vanilla JavaScript for animations and interactive elements without any frameworks.
+
+## Main JavaScript Features
+
+The JavaScript functionality is included at the bottom of [html/personal_website/qiansji_cv.html](mdc:html/personal_website/qiansji_cv.html) and includes:
+
+1. **Fade-in Animations** - Elements with the `.fade-in` class appear when scrolled into view using Intersection Observer
+
+```javascript
+const fadeElements = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+fadeElements.forEach(element => {
+  observer.observe(element);
+});
+```
+
+2. **Animated Counters** - Numbers in the achievements section count up from zero when scrolled into view
+
+```javascript
+const countElements = document.querySelectorAll('[data-count]');
+countElements.forEach(element => {
+  const target = parseInt(element.getAttribute('data-count'));
+  const duration = 2000;
+  const step = target / (duration / 16);
+  let current = 0;
+  const updateCount = () => {
+    current += step;
+    if (current < target) {
+      element.textContent = Math.floor(current).toLocaleString();
+      requestAnimationFrame(updateCount);
+    } else {
+      element.textContent = target.toLocaleString();
+    }
+  };
+  // Start counting when element is in view
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        updateCount();
+        countObserver.unobserve(entry.target);
+      }
+    });
+  });
+  countObserver.observe(element);
+});
+```
+
+## External JavaScript Libraries
+
+The website includes these external JavaScript libraries:
+
+1. **ECharts** - For data visualization (though currently not actively used in the visible content)
+   ```html
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+   ```
+
+2. **Tailwind CSS** - For styling (loaded via CDN)
+   ```html
+   <script src="https://cdn.tailwindcss.com"></script>
+   ```
+
+3. **Font Awesome** - For icons (loaded via CSS)
+   ```html
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+   ```
+
+## Event Handling
+
+All JavaScript is initialized on the `DOMContentLoaded` event to ensure the DOM is fully loaded before scripts run:
+
+```javascript
+document.addEventListener('DOMContentLoaded', function() {
+  // All initialization code here
+});
+```

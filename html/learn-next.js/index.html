@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Next.js in 5 Days</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background-color: #f9fafb;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(79, 70, 229, 0.15) 0%, rgba(79, 70, 229, 0.08) 100%);
+            padding: 0.2em 0.4em;
+            border-radius: 0.3em;
+            font-weight: 500;
+        }
+
+        .key-phrase {
+            color: #4f46e5;
+            font-weight: 600;
+        }
+
+        .highlight-yellow {
+            background: linear-gradient(120deg, rgba(250, 204, 21, 0.2) 0%, rgba(250, 204, 21, 0.1) 100%);
+            padding: 0.2em 0.4em;
+            border-radius: 0.3em;
+            font-weight: 500;
+        }
+
+        .code-block {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .code-block::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4f46e5, #8b5cf6, #ec4899);
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            height: 100%;
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            left: -0.375rem;
+            top: 0.5rem;
+            height: 0.75rem;
+            width: 0.75rem;
+            border-radius: 50%;
+            background-color: #4f46e5;
+        }
+
+        .timeline-item:last-child::before {
+            height: 0;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .img-container {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .img-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .img-container:hover img {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+        <header class="mb-8 text-center">
+            <div class="flex justify-center mb-6">
+                <div class="bg-indigo-600 text-white p-4 rounded-full">
+                    <i data-lucide="code" class="w-12 h-12"></i>
+                </div>
+            </div>
+            <h1 class="text-5xl font-bold mb-4 text-indigo-600">Learning Next.js in 5 Days</h1>
+            <p class="text-xl text-gray-600 mb-6">A Full-Stack Development Learning Journey from Scratch</p>
+
+            <!-- Hero Image -->
+            <div class="hero-image rounded-xl overflow-hidden shadow-xl mb-12 max-w-4xl mx-auto">
+                <img src="../../public/img/bb61fad2-6e7e-4ff8-a132-1210d33f4811.png" alt="Next.js Learning Journey" class="w-full h-auto">
+            </div>
+        </header>
+
+        <section class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                    <i data-lucide="help-circle" class="w-6 h-6 text-indigo-600"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Why Learn Next.js in 2025</h2>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <p class="mb-4">As a beginner with <span class="highlight">no development experience</span>, why should I learn Next.js?</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                        <span>It's one of the <span class="key-phrase">fastest-growing frameworks</span> in the React ecosystem</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                        <span><span class="highlight">Mature ecosystem</span>, comprehensive documentation, and active community</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                        <span>No need to deploy frontend and backend separately; you can complete <span class="highlight-yellow">full-stack development in a single project</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                        <span>Most importantly, with <span class="key-phrase">Cursor and other AI tools</span>, learning to code has become <span class="highlight-yellow">much easier than ever before</span>. In my 10 years of work experience, I've tried learning programming before, but the difficulty of learning code was discouraging</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                        <span>As the <span class="highlight">barrier to programming lowers</span>, more people can implement their own ideas, which will be a very interesting development</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                    <i data-lucide="map" class="w-6 h-6 text-indigo-600"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Learning Path</h2>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="mb-4">For this learning journey, I used two AI tools: <span class="key-phrase">Cursor</span> and <span class="key-phrase">Augment</span>. I'll explain why I chose these tools and how they specifically helped me complete my learning plan.</p>
+
+                <div class="timeline-item">
+                    <div class="flex items-center mb-2">
+                        <i data-lucide="book-open" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Learning Resources</h3>
+                    </div>
+                    <p>I chose <span class="highlight-yellow">Next.js's official learning documentation</span>, <a href="https://nextjs.org/learn" class="text-indigo-600 hover:underline" target="_blank">https://nextjs.org/learn</a></p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="flex items-center mb-2">
+                        <i data-lucide="layers" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Course Content</h3>
+                    </div>
+                    <p>The official site provides a series of Next.js introductory courses, including <span class="highlight">React Foundations</span>.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="flex items-center mb-2">
+                        <i data-lucide="flag" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Starting Point</h3>
+                    </div>
+                    <p>Since I had <span class="highlight-yellow">no previous development experience</span>, I chose to start with <span class="key-phrase">React Foundations</span> and <span class="key-phrase">App Router</span>.</p>
+                    <div class="img-container mt-4">
+                        <img src="../../public/img/dashboard.png" alt="Next.js Dashboard" class="rounded-lg">
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="flex items-center mb-2">
+                        <i data-lucide="code" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Project Implementation</h3>
+                    </div>
+                    <p>After completing the basic React introduction, I started learning Next.js's App Router, where we built a <span class="highlight-yellow">full-stack web application</span>.</p>
+                    <div class="bg-indigo-50 p-4 rounded-lg mt-4">
+                        <h4 class="font-semibold mb-2 flex items-center">
+                            <i data-lucide="list-checks" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                            Project Features:
+                        </h4>
+                        <ul class="space-y-2 pl-7 list-disc">
+                            <li>A <span class="key-phrase">public home page</span>.</li>
+                            <li>A <span class="key-phrase">login page</span>.</li>
+                            <li><span class="highlight">Dashboard pages that are protected by authentication</span>.</li>
+                            <li>The ability for users to <span class="highlight">add, edit, and delete invoices</span>.</li>
+                        </ul>
+                        <p class="mt-3">These are the most common features in everyday web applications, which is why we chose this project for learning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                    <i data-lucide="code-2" class="w-6 h-6 text-indigo-600"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Learning Process</h2>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="mb-6">During the learning process, I chose the <span class="key-phrase">Cursor tool</span> as my AI assistant, which has <span class="highlight-yellow">powerful code completion capabilities</span> that make coding more efficient.</p>
+
+                <div class="card bg-gradient-to-r from-blue-50 to-indigo-50 border border-indigo-100">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="info" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                        <h3 class="text-xl font-semibold">What is Cursor?</h3>
+                    </div>
+                    <p>Cursor is an <span class="highlight">AI code editor designed specifically for developers</span>, aimed at providing an exceptional productivity experience. It's based on VSCode but integrates <span class="key-phrase">powerful AI features</span> to make the coding process more efficient.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="zap" class="w-4 h-4 text-amber-500 mr-2"></i>
+                                <h4 class="font-semibold">Tab Smart Completion</h4>
+                            </div>
+                            <p class="text-sm">Cursor <span class="highlight">predicts your next edit</span> based on context, making it easy to complete modifications by simply pressing the Tab key to accept suggestions.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="search" class="w-4 h-4 text-indigo-600 mr-2"></i>
+                                <h4 class="font-semibold">Codebase Understanding</h4>
+                            </div>
+                            <p class="text-sm">Get answers from your codebase or documentation, with the ability to <span class="highlight-yellow">reference specific files</span> and deeply understand your project structure.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="message-square" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <h4 class="font-semibold">Natural Language Editing</h4>
+                            </div>
+                            <p class="text-sm">Write or modify code through <span class="key-phrase">simple natural language instructions</span>; with just one prompt, you can update entire classes or functions.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="shield" class="w-4 h-4 text-gray-700 mr-2"></i>
+                                <h4 class="font-semibold">Privacy Protection</h4>
+                            </div>
+                            <p class="text-sm">Offers privacy mode options to ensure code isn't stored remotely, with SOC 2 certification to guarantee data security.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-right">
+                        <a href="https://www.cursor.com" target="_blank" class="text-indigo-600 hover:underline inline-flex items-center">
+                            <span>Visit Cursor Website</span>
+                            <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="code" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Code Examples and Practice</h3>
+                    </div>
+                    <p>The official Next.js documentation provides <span class="highlight">numerous code examples</span> that we can run directly in Cursor and view the results.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div class="img-container">
+                            <img src="../../public/img/partial-rendering-dashboard.png" alt="Partial Rendering Dashboard" class="rounded-lg">
+                        </div>
+                        <div class="img-container">
+                            <img src="../../public/img/shared-layout.png" alt="Shared Layout" class="rounded-lg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-6">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="brain" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Learning Method</h3>
+                    </div>
+                    <p>Throughout the process, I tried to <span class="highlight-yellow">avoid using Cursor's agent feature</span>, as it would make me miss many opportunities for thinking. I preferred using <span class="key-phrase">Cursor's code completion feature</span>, which helped me better understand the code.</p>
+                </div>
+
+                <div class="card mt-6">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="alert-circle" class="w-5 h-5 text-amber-500 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Challenges Encountered</h3>
+                    </div>
+                    <p>However, during the process, I still encountered many problems. For example, the official documentation examples often <span class="highlight">omit large amounts of code</span>, making it very difficult for beginners to understand.</p>
+                    <p class="mt-3">In these situations, I would use <span class="key-phrase">Cursor's agent feature</span> to help me <span class="highlight-yellow">fix problems and explain the code</span>.</p>
+                </div>
+
+                <div class="card mt-6">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="wrench" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Problem-Solving Examples</h3>
+                    </div>
+                    <p>For instance, in Chapter 6 "Setting Up Your Database" of the official course, we encountered a <span class="highlight">bcrypt error during Vercel deployment</span>. At this point, I chose to use Cursor's agent feature to help me fix the problem and explain the code.</p>
+                    <p class="mt-3">Similarly, in Chapter 7 "Fetching Data," there was an assignment that required us to implement <span class="key-phrase">data fetching functionality</span> in a card component. However, the official course only provided the <span class="highlight-yellow">page.tsx code and didn't include the card component code</span>. In this case, we could use the agent feature to have Cursor generate the card component code for us.</p>
+                    <div class="img-container mt-4">
+                        <img src="../../public/img/WX20250412-110337.png" alt="Cursor Agent Help" class="rounded-lg">
+                    </div>
+                </div>
+
+                <div class="card mt-6 bg-gradient-to-r from-indigo-50 to-purple-50">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="trophy" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Learning Outcomes</h3>
+                    </div>
+                    <p>After <span class="key-phrase">5 days of learning</span>, I finally completed these two official courses and <span class="highlight-yellow">successfully deployed to Vercel</span>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                    <i data-lucide="lightbulb" class="w-6 h-6 text-indigo-600"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Learning Summary & Sharing</h2>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="mb-6">After completing these two official courses, I decided to share my learning experience and help more people learn Next.js. For this purpose, I chose the Augment tool, <a href="https://www.augmentcode.com/" class="text-indigo-600 hover:underline" target="_blank">https://www.augmentcode.com/</a></p>
+
+                <div class="img-container">
+                    <img src="../../public/img/WX20250412-111802.png" alt="Augment Code" class="rounded-lg">
+                </div>
+
+                <div class="card mt-6 bg-gradient-to-r from-purple-50 to-indigo-50 border border-indigo-100">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="info" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                        <h3 class="text-xl font-semibold">What is Augment Code?</h3>
+                    </div>
+                    <p class="mb-4">Augment Code is the first AI agent designed for professional software engineers and large codebases. It can deeply understand your codebase and coding style, providing high-quality code generation and assistance features.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="brain" class="w-4 h-4 text-purple-600 mr-2"></i>
+                                <h4 class="font-semibold">Memory Function</h4>
+                            </div>
+                            <p class="text-sm">Augment's memory function automatically updates and persists throughout conversations, improving the quality of generated code and matching your coding style.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="tool" class="w-4 h-4 text-indigo-600 mr-2"></i>
+                                <h4 class="font-semibold">Native Tool Integration</h4>
+                            </div>
+                            <p class="text-sm">Integrates with native tools like GitHub, Jira, Notion, and Linear, allowing you to go from issue to PR in minutes without complex configuration.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="save" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <h4 class="font-semibold">Code Checkpoints</h4>
+                            </div>
+                            <p class="text-sm">Automatically creates workspace snapshots, allowing you to continue making progress while reviewing changes, with one-click restoration to any previous checkpoint.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="database" class="w-4 h-4 text-amber-600 mr-2"></i>
+                                <h4 class="font-semibold">Context Engine</h4>
+                            </div>
+                            <p class="text-sm">Analyzes the entire codebase in real-time, ensuring that every completion, instruction, and chat has the correct context, providing unmatched code quality.</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-4">Augment ranks first on the SWE-Bench verification leaderboard with a score of 65.4%, demonstrating its exceptional code quality and reliability.</p>
+
+                    <div class="mt-4 text-right">
+                        <a href="https://www.augmentcode.com/" target="_blank" class="text-indigo-600 hover:underline inline-flex items-center">
+                            <span>Visit Augment Code Website</span>
+                            <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card mt-6">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="zap" class="w-5 h-5 text-amber-500 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Advantages of Augment Code</h3>
+                    </div>
+                    <p>Augment Code is an IDE plugin, similar to Cline as a code assistance tool, but it has a dedicated memory module that better handles contextual information. This is especially useful in large projects where we repeatedly use Cursor's agent assistant. With Cursor, I often found myself having to repeatedly describe the problems I encountered when opening a new chat, whereas Augment Code handles this aspect significantly better.</p>
+                    <div class="img-container mt-4">
+                        <img src="../../public/img/WX20250412-112035.png" alt="Augment Code Memory" class="rounded-lg">
+                    </div>
+                </div>
+
+                <div class="card mt-6 bg-gray-50">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="code" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Using Augment to Generate Pages</h3>
+                    </div>
+                    <p>I used Augment to directly create an HTML page of my entire learning process, with the following prompt:</p>
+                    <div class="code-block mt-3">
+                        <pre>Please generate an html page according to the content of @learn-next.js.md. Use HTML + Tailwind CSS to generate the interface and use the lucide icon component library to add icons to the interface. During the process, use highlight, block, flowchart and other style components to make the page more beautiful and easy to read. Store the generated page under the path qiansui_cv/html/learn-next.js.</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                    <i data-lucide="share-2" class="w-6 h-6 text-indigo-600"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Share to Social Networks</h2>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="mb-4">After creating the entire webpage content, I needed to share it on social platforms like LinkedIn or X.</p>
+                <p class="mb-4">So we needed a more eye-catching cover image. For this, I chose ChatGPT's text-to-image feature. Due to recent updates to ChatGPT's image generation capabilities, the quality of the generated images is now very high. I only needed to use a prompt to get a beautiful image for our cover.</p>
+
+                <div class="img-container">
+                    <img src="../../public/img/WX20250412-123425.png" alt="ChatGPT Image Generation" class="rounded-lg">
+                </div>
+
+                <div class="code-block mt-4">
+                    <pre>Please generate an youtube video cover image according to the content of @learn-next.js.md. Aspect ratio is 4:3.</pre>
+                </div>
+
+                <p class="mt-4">This gave us the following cover image:</p>
+
+                <div class="img-container mt-4">
+                    <img src="../../public/img/bb61fad2-6e7e-4ff8-a132-1210d33f4811.png" alt="Generated Cover Image" class="rounded-lg">
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                    <i data-lucide="git-branch" class="w-6 h-6 text-indigo-600"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Workflow</h2>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="mb-6">During this learning process, I established an efficient workflow:</p>
+
+                <!-- Flowchart for the workflow -->
+                <div class="flowchart-container my-8 overflow-x-auto">
+                    <div class="min-w-full" style="min-width: 800px;">
+                        <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+                            <!-- Background -->
+                            <rect width="800" height="400" fill="#f8fafc" rx="8" ry="8"></rect>
+
+                            <!-- Phase 1: Learning Preparation -->
+                            <g>
+                                <rect x="50" y="50" width="200" height="80" rx="8" ry="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"></rect>
+                                <text x="150" y="85" text-anchor="middle" font-weight="bold" fill="#4f46e5" font-size="16">Learning Preparation</text>
+                                <text x="150" y="110" text-anchor="middle" fill="#4b5563" font-size="12">Resources, Environment, Planning</text>
+                            </g>
+
+                            <!-- Arrow 1 -->
+                            <g>
+                                <path d="M 150 130 L 150 170" stroke="#4f46e5" stroke-width="2" fill="none"></path>
+                                <polygon points="150,180 145,170 155,170" fill="#4f46e5"></polygon>
+                            </g>
+
+                            <!-- Phase 2: Learning Execution -->
+                            <g>
+                                <rect x="50" y="180" width="200" height="80" rx="8" ry="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"></rect>
+                                <text x="150" y="215" text-anchor="middle" font-weight="bold" fill="#3b82f6" font-size="16">Learning Execution</text>
+                                <text x="150" y="240" text-anchor="middle" fill="#4b5563" font-size="12">Follow Tutorials, Code, Solve Problems</text>
+                            </g>
+
+                            <!-- Arrow 2 -->
+                            <g>
+                                <path d="M 150 260 L 150 300" stroke="#3b82f6" stroke-width="2" fill="none"></path>
+                                <polygon points="150,310 145,300 155,300" fill="#3b82f6"></polygon>
+                            </g>
+
+                            <!-- Phase 3: Knowledge Organization & Sharing -->
+                            <g>
+                                <rect x="50" y="310" width="200" height="80" rx="8" ry="8" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"></rect>
+                                <text x="150" y="345" text-anchor="middle" font-weight="bold" fill="#8b5cf6" font-size="16">Knowledge Sharing</text>
+                                <text x="150" y="370" text-anchor="middle" fill="#4b5563" font-size="12">Notes, Generate Pages, Share Results</text>
+                            </g>
+
+                            <!-- Tools Section -->
+                            <g>
+                                <rect x="350" y="50" width="400" height="340" rx="8" ry="8" fill="#f8fafc" stroke="#e5e7eb" stroke-width="2" stroke-dasharray="5,5"></rect>
+                                <text x="550" y="80" text-anchor="middle" font-weight="bold" fill="#4b5563" font-size="16">Tool Support</text>
+
+                                <!-- Tool 1: Official Docs -->
+                                <g>
+                                    <rect x="380" y="100" width="150" height="60" rx="8" ry="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"></rect>
+                                    <text x="455" y="135" text-anchor="middle" font-weight="bold" fill="#d97706" font-size="14">Next.js Official Docs</text>
+                                    <path d="M 250 90 L 380 130" stroke="#d97706" stroke-width="2" fill="none" stroke-dasharray="5,5"></path>
+                                </g>
+
+                                <!-- Tool 2: Cursor -->
+                                <g>
+                                    <rect x="380" y="180" width="150" height="60" rx="8" ry="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"></rect>
+                                    <text x="455" y="215" text-anchor="middle" font-weight="bold" fill="#16a34a" font-size="14">Cursor IDE</text>
+                                    <path d="M 250 220 L 380 210" stroke="#16a34a" stroke-width="2" fill="none" stroke-dasharray="5,5"></path>
+                                </g>
+
+                                <!-- Tool 3: Augment -->
+                                <g>
+                                    <rect x="380" y="260" width="150" height="60" rx="8" ry="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"></rect>
+                                    <text x="455" y="295" text-anchor="middle" font-weight="bold" fill="#2563eb" font-size="14">Augment Code</text>
+                                    <path d="M 250 350 L 380 290" stroke="#2563eb" stroke-width="2" fill="none" stroke-dasharray="5,5"></path>
+                                </g>
+
+                                <!-- Tool 4: ChatGPT -->
+                                <g>
+                                    <rect x="550" y="180" width="150" height="60" rx="8" ry="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"></rect>
+                                    <text x="625" y="215" text-anchor="middle" font-weight="bold" fill="#dc2626" font-size="14">ChatGPT</text>
+                                    <path d="M 250 350 L 550 210" stroke="#dc2626" stroke-width="2" fill="none" stroke-dasharray="5,5"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="card bg-indigo-50">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="clipboard-list" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                            <h3 class="text-lg font-semibold">1. Learning Preparation</h3>
+                        </div>
+                        <ul class="space-y-2 pl-7 list-disc text-sm">
+                            <li>Choose Next.js official documentation as the main learning resource</li>
+                            <li>Configure development environment: Cursor IDE and Augment plugin</li>
+                            <li>Create learning plan and set goals</li>
+                        </ul>
+                    </div>
+
+                    <div class="card bg-blue-50">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="code" class="w-5 h-5 text-blue-600 mr-2"></i>
+                            <h3 class="text-lg font-semibold">2. Learning Execution</h3>
+                        </div>
+                        <ul class="space-y-2 pl-7 list-disc text-sm">
+                            <li>Follow official tutorials step by step</li>
+                            <li>Use Cursor's code completion feature to assist coding</li>
+                            <li>Strategically use AI assistants when encountering problems:
+                                <ul class="pl-4 mt-1 space-y-1">
+                                    <li>Simple problems: Prioritize independent thinking and solving</li>
+                                    <li>Complex problems: Use Cursor Agent for help</li>
+                                    <li>Context-related: Utilize Augment's memory function</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card bg-purple-50">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="share" class="w-5 h-5 text-purple-600 mr-2"></i>
+                            <h3 class="text-lg font-semibold">3. Knowledge Organization & Sharing</h3>
+                        </div>
+                        <ul class="space-y-2 pl-7 list-disc text-sm">
+                            <li>Record learning notes using Markdown</li>
+                            <li>Generate beautiful HTML pages through Augment</li>
+                            <li>Create cover images using ChatGPT</li>
+                            <li>Share to social platforms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="flex items-center mb-6">
+                <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                    <i data-lucide="check-circle" class="w-6 h-6 text-indigo-600"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Summary</h2>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="mb-6">After <span class="highlight-yellow">5 days of learning Next.js</span>, I have the following <span class="key-phrase">key takeaways</span>:</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card bg-gradient-to-br from-indigo-50 to-blue-50">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="code-2" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                            <h3 class="text-xl font-semibold">1. Technical Learning</h3>
+                        </div>
+                        <ul class="space-y-2 pl-7 list-disc">
+                            <li>Mastered <span class="highlight">React fundamentals</span></li>
+                            <li>Understood <span class="key-phrase">Next.js core concepts</span> and App Router</li>
+                            <li>Completed development and deployment of a <span class="highlight-yellow">full-stack web application</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="card bg-gradient-to-br from-purple-50 to-indigo-50">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="tool" class="w-5 h-5 text-purple-600 mr-2"></i>
+                            <h3 class="text-xl font-semibold">2. Tool Usage</h3>
+                        </div>
+                        <ul class="space-y-2 pl-7 list-disc">
+                            <li>Discovered the important value of <span class="key-phrase">AI tools</span> in the learning process</li>
+                            <li>Learned to <span class="highlight">balance AI assistance and independent learning</span></li>
+                            <li>Established an efficient <span class="highlight-yellow">learn-record-share workflow</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="card bg-gradient-to-br from-amber-50 to-yellow-50">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="lightbulb" class="w-5 h-5 text-amber-600 mr-2"></i>
+                            <h3 class="text-xl font-semibold">3. Experience Summary</h3>
+                        </div>
+                        <ul class="space-y-2 pl-7 list-disc">
+                            <li>For beginners with <span class="highlight">zero foundation</span>, choosing appropriate learning resources is crucial</li>
+                            <li><span class="key-phrase">AI tools</span> can significantly <span class="highlight-yellow">lower the learning barrier</span>, but overreliance should be avoided</li>
+                            <li>Establishing a complete learn-practice-share loop helps <span class="key-phrase">solidify knowledge</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="card bg-gradient-to-br from-green-50 to-emerald-50">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="trending-up" class="w-5 h-5 text-green-600 mr-2"></i>
+                            <h3 class="text-xl font-semibold">4. Future Outlook</h3>
+                        </div>
+                        <ul class="space-y-2 pl-7 list-disc">
+                            <li>Plan to learn more <span class="highlight">advanced features of Next.js</span> in depth</li>
+                            <li>Try to develop more <span class="key-phrase">practical projects</span> to apply the knowledge learned</li>
+                            <li>Continue to optimize the methodology of <span class="highlight-yellow">AI-assisted learning</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="text-gray-700">This learning experience proves that with the assistance of <span class="key-phrase">AI tools</span>, even learners with <span class="highlight">zero foundation</span> can master <span class="highlight-yellow">modern web development technologies</span> in a relatively short time. The key is to choose appropriate learning resources, use AI tools reasonably, and maintain focus and persistence in learning.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-600 mt-20 pt-10 border-t border-gray-200">
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="#" class="text-gray-500 hover:text-indigo-600">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600">
+                    <i data-lucide="twitter" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+            <p class="mb-2">© 2025 Learning Next.js in 5 Days</p>
+            <p class="text-sm">Built with Tailwind CSS and Lucide Icons</p>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

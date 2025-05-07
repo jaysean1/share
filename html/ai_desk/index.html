@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Desk Introduction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <style>
+        /* Custom highlight style */
+        .highlight {
+            background-color: #fef9c3; /* Tailwind yellow-100 */
+            padding: 0.1em 0.3em;
+            border-radius: 0.25rem;
+            font-weight: 600; /* Semi-bold */
+        }
+        /* Custom blockquote style */
+        blockquote {
+            border-left: 4px solid #d1d5db; /* Tailwind gray-300 */
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #4b5563; /* Tailwind gray-600 */
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans leading-normal tracking-normal">
+    <div class="container mx-auto max-w-4xl p-6 bg-white shadow-lg rounded-lg my-10">
+        <!-- Hero Section -->
+        <div class="flex flex-col md:flex-row items-center mb-8 bg-blue-50 p-8 rounded-lg">
+            <div class="md:w-1/2 mb-6 md:mb-0 md:pr-6">
+                <h1 class="text-4xl font-bold text-gray-800 flex items-center">
+                    <i data-lucide="book-open" class="mr-3 text-blue-500"></i><span>AI Study Desk</span>
+                </h1>
+                <p class="text-lg text-gray-600 mt-2">An intelligent solution designed to help children with homework and ease the burden on parents.</p>
+            </div>
+            <div class="md:w-1/2">
+                <img src="../../public/ai_desk/a_person_sketching.svg" alt="AI Study Desk Tech Flow" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+        </div>
+        <!-- Video Section -->
+        <div class="mb-8">
+            <iframe class="w-full h-64 md:h-96 rounded-lg shadow-md" src="https://www.youtube.com/embed/tRlVbto5exU" title="AI Study Desk Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i data-lucide="info" class="mr-2 text-green-500"></i>Background
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Recently, while visiting friends, I witnessed the process of them helping their children with <strong class="text-blue-500">homework</strong>. The friends needed to stay with the child throughout, <span class="highlight">answering questions promptly</span>, guiding patiently, and finally grading the homework.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                The entire process lasted nearly <strong class="text-blue-500">two hours</strong>, and only then could we sit down to chat. This made me realize that tutoring children with homework nowadays is an <span class="highlight">extremely arduous task</span>. My friends also told me that schools today are very different from our time:
+            </p>
+            <ul class="list-none mb-4 text-gray-700 space-y-2">
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="book" class="mr-3 text-blue-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-blue-500">Large Homework Volume:</strong> The amount of homework assigned in elementary schools today far exceeds the past. Previously, we could complete homework at school, but now it’s nearly impossible, requiring <span class="highlight">2-3 hours at home</span> to finish elementary school homework.</span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="bar-chart" class="mr-3 text-blue-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-blue-500">High Difficulty:</strong> The difficulty of elementary school homework has significantly increased. Some questions are so challenging that even parents struggle to solve them, needing to <span class="highlight">consult resources or search online</span>.</span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="users" class="mr-3 text-blue-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-blue-500">Full Parental Involvement:</strong> Nowadays, homework grading primarily relies on parents rather than teachers. Teachers assign homework to be completed at home, parents grade it, and teachers only record the <span class="highlight">homework status</span>.</span>
+                </li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                During this process, I identified <strong class="text-blue-500">two core issues</strong>:
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 my-6">
+                <div class="bg-red-50 p-4 rounded-lg border border-red-200 flex items-start">
+                    <i data-lucide="alert-triangle" class="mr-3 text-red-400 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-lg text-red-700">Difficulty</h4>
+                        <p class="text-red-600">The <span class="highlight">increased difficulty</span> of homework often requires parents to look up information to complete it.</p>
+                    </div>
+                </div>
+                <div class="bg-red-50 p-4 rounded-lg border border-red-200 flex items-start">
+                    <i data-lucide="clock" class="mr-3 text-red-400 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-lg text-red-700">Exhaustion</h4>
+                        <p class="text-red-600">Beyond the difficulty, the process is <span class="highlight">extremely time-consuming and exhausting</span>. After a day’s work, parents must spend another 2-3 hours tutoring their children, which is overwhelming.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                This led me to consider whether an <strong class="text-blue-500">intelligent solution</strong> could help my friends and their children with <span class="highlight">homework tutoring</span>. This solution needs to meet the following requirements:
+            </p>
+            <ul class="list-none mb-4 text-gray-700 space-y-2">
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="message-square" class="mr-3 text-green-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-green-500">Automatic Answering:</strong> Can <span class="highlight">automatically respond</span> to and answer children’s questions, assisting with homework completion.</span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="file-text" class="mr-3 text-green-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-green-500">Automatic Recording:</strong> Automatically records the entire learning process and generates a <span class="highlight">final study report</span>.</span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="monitor" class="mr-3 text-green-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-green-500">No Additional Hardware:</strong> Requires <span class="highlight">no extra hardware purchases</span>, only a computer and a phone.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i data-lucide="settings" class="mr-2 text-purple-500"></i>Solution Design
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Based on the above requirements, I began designing and selecting the <strong class="text-blue-500">specific solution</strong>.
+            </p>
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i data-lucide="workflow" class="mr-2 text-orange-500"></i>Process Design
+            </h3>
+            <div class="border border-gray-300 rounded-lg shadow-md overflow-hidden my-4">
+                <img src="../../public/ai_desk/tech-flow.png" alt="Tech Flow Diagram" class="w-full h-auto">
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Solution Description:
+            </p>
+            <ul class="list-none mb-4 text-gray-700 space-y-2">
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="layout" class="mr-3 text-blue-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-blue-500">Frontend:</strong> Implemented using <span class="highlight">Python Tkinter</span>, including a video monitoring interface and a configuration interface.</span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="server" class="mr-3 text-blue-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-blue-500">Backend:</strong> Implemented using <span class="highlight">Python Flask</span>, including backend interfaces and interaction with <span class="highlight">Qwen-Omni-VL</span>. Qwen was chosen as the monitoring model due to its high performance and low cost.</span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="book-open-check" class="mr-3 text-blue-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-blue-500">Study Assistance:</strong> Implemented using <span class="highlight">QuickTime</span> and <span class="highlight">Doubao 1.5pro</span>, including video monitoring and screen sharing. Doubao is ByteDance’s latest multimodal model, performing excellently in multiple benchmark tests.</span>
+                </li>
+            </ul>
+            <div class="border border-gray-300 rounded-lg shadow-md overflow-hidden my-4">
+                <img src="../../public/ai_desk/doubao.png" alt="Doubao Model" class="w-full h-auto">
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i data-lucide="test-tube" class="mr-2 text-cyan-500"></i>Function Testing
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                After completing the development of the relevant functions, we conducted <strong class="text-blue-500">actual testing</strong>:
+            </p>
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i data-lucide="sliders" class="mr-2 text-red-500"></i>Configuration Function
+            </h3>
+            <div class="border border-gray-300 rounded-lg shadow-md overflow-hidden my-4">
+                <img src="../../public/ai_desk/config.png" alt="Configuration Interface" class="w-full h-auto">
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                In the configuration interface, <span class="highlight">monitoring point behaviors</span> can be dynamically customized through configuration. Essentially, it passes monitoring point configuration information to <span class="highlight">Qwen-Omni-VL</span> via dynamic prompts, allowing it to monitor specified behaviors and return recognized video behaviors and their durations. Supported operations include:
+            </p>
+            <ul class="list-none mb-4 text-gray-700 space-y-2">
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="plus-circle" class="mr-3 text-green-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-green-500">Add</strong></span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="edit" class="mr-3 text-green-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-green-500">Modify</strong></span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="trash-2" class="mr-3 text-green-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-green-500">Delete</strong></span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="save" class="mr-3 text-green-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-green-500">Save</strong></span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="refresh-cw" class="mr-3 text-green-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-green-500">Reset</strong></span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="download" class="mr-3 text-green-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-green-500">Load:</strong> Allows <span class="highlight">dynamic adjustments</span> without restarting the application each time.</span>
+                </li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i data-lucide="monitor-play" class="mr-2 text-orange-500"></i>Monitoring Function
+            </h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                The monitoring interface is divided into <strong class="text-blue-500">three areas</strong>:
+            </p>
+            <ul class="list-none mb-4 text-gray-700 space-y-2">
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="video" class="mr-3 text-blue-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-blue-500">Video Input Area:</strong> Used to display the <span class="highlight">monitoring footage</span>. Every 10 seconds, the past video content is sent to Qwen-Omni-VL for recognition, and the results are displayed in the recognition result area. Since only one frame is captured per second, video consumption is minimal.</span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="bar-chart-2" class="mr-3 text-blue-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-blue-500">Recognition Result Area:</strong> Displays <span class="highlight">Qwen-Omni-VL’s recognition results</span>. We parse the recognized content and track the duration of various behaviors during the process. The results are presented in a chart for clarity.</span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="file-check" class="mr-3 text-blue-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-blue-500">Study Summary Area:</strong> After each study session, the model summarizes and scores the process, generating a <span class="highlight">study summary report</span> with one click.</span>
+                </li>
+            </ul>
+            <div class="space-y-4 my-4">
+                <div class="border border-gray-300 rounded-lg shadow-md overflow-hidden">
+                    <img src="../../public/ai_desk/monitor-start.png" alt="Monitor Start" class="w-full h-auto">
+                </div>
+                <div class="border border-gray-300 rounded-lg shadow-md overflow-hidden">
+                    <img src="../../public/ai_desk/monitor-ing.png" alt="Monitor In Progress" class="w-full h-auto">
+                </div>
+                <div class="border border-gray-300 rounded-lg shadow-md overflow-hidden">
+                    <img src="../../public/ai_desk/monitor-end.png" alt="Monitor End" class="w-full h-auto">
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i data-lucide="book-open" class="mr-2 text-purple-500"></i>Study Assistance
+            </h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                In the study assistance interface, we mainly implemented:
+            </p>
+            <ul class="list-none mb-4 text-gray-700 space-y-2">
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="camera" class="mr-3 text-green-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-green-500">Study Monitoring:</strong> Monitors <span class="highlight">study content footage</span>. Unlike the ‘monitoring’ function, here we use the phone’s camera to capture content on the desktop. Since elementary school homework is completed in textbooks rather than on computers, we need the large model to see the study content.</span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="mic" class="mr-3 text-green-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-green-500">Real-Time Voice Interaction:</strong> Users can initiate question requests during the study process, and the model analyzes the images and calls <span class="highlight">Doubao 1.5pro</span> to provide analysis results.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i data-lucide="book-marked" class="mr-2 text-gray-600"></i>Project Summary
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Thus, we achieved <strong class="text-blue-500">automation of the entire study process</strong>, enabling <span class="highlight">80% of homework tutoring</span> without parental intervention.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Of course, there’s still the remaining 20%, including <strong class="text-blue-500">homework correction and recording</strong>. I’ve also considered subsequent optimization plans:
+            </p>
+            <ul class="list-none mb-4 text-gray-700 space-y-2">
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="edit-3" class="mr-3 text-blue-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-blue-500">Correction Function:</strong> Requires <span class="highlight">text-to-image capabilities</span> to present corrected homework content using prompts and images.</span>
+                </li>
+                <li class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="archive" class="mr-3 text-blue-400 mt-1 flex-shrink-0"></i>
+                    <span><strong class="font-semibold text-blue-500">Homework Recording:</strong> Requires the model’s <span class="highlight">MCP</span> to connect to external document storage products like Notion or Google Docs, automatically uploading and categorizing all content after the study process.</span>
+                </li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Currently, the above two functions are not fully implemented in the video. In <strong class="text-blue-500">subsequent optimizations</strong>, I will implement these features.
+            </p>
+            <div class="flex items-center justify-center text-lg font-semibold text-gray-600 mt-10 mb-4">
+                <i data-lucide="heart" class="mr-2 text-red-500"></i>
+                <span>Thanks for watching!</span>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Make sure Lucide is loaded before creating icons
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+                console.log('Lucide icons initialized');
+            } else {
+                console.error('Lucide library not loaded');
+            }
+        });
+    </script>
+</body>
+</html>

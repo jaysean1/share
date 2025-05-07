@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 产品案例展示</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#3B82F6'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '2px',
+                        DEFAULT: '4px',
+                        'md': '8px',
+                        'lg': '12px',
+                        'xl': '16px',
+                        '2xl': '20px',
+                        '3xl': '24px',
+                        'full': '9999px',
+                        'button': '4px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            min-height: 1024px;
+        }
+        .hero-section {
+            background-image: url('https://ai-public.mastergo.com/ai/img_res/b93b67eca02cf80261868b58dfebc0e2.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .tech-card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-12">
+                <a href="#" class="text-2xl font-['Pacifico'] text-primary">logo</a>
+                <div class="flex space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-primary">首页</a>
+                    <a href="#" class="text-gray-600 hover:text-primary">产品</a>
+                    <a href="#" class="text-gray-600 hover:text-primary">解决方案</a>
+                    <a href="#" class="text-gray-600 hover:text-primary">客户案例</a>
+                </div>
+            </div>
+            <button class="px-6 py-2 bg-primary text-white !rounded-button hover:bg-primary/90 whitespace-nowrap">联系我们</button>
+        </div>
+    </nav>
+
+    <section class="hero-section pt-16">
+        <div class="max-w-7xl mx-auto px-6 py-24">
+            <div class="w-1/2">
+                <h1 class="text-5xl font-bold text-gray-900 mb-6">智能对话机器人</h1>
+                <p class="text-xl text-gray-600 mb-8">基于最新的 GPT-4 大语言模型，为企业提供智能客服解决方案。支持多轮对话、意图理解、情感分析，帮助企业提升服务效率和客户满意度。</p>
+                <button class="px-8 py-3 bg-primary text-white !rounded-button hover:bg-primary/90 text-lg whitespace-nowrap">查看详情</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">项目概述</h2>
+            <div class="grid grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-lightbulb text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">项目背景</h3>
+                    <p class="text-gray-600">随着企业数字化转型加速，传统人工客服已无法满足 24/7 全天候服务需求。智能对话机器人能够有效降低人工成本，提升服务效率。</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">目标用户</h3>
+                    <p class="text-gray-600">面向电商、金融、教育等行业的企业客户，特别是具有大量重复性客服咨询需求的中大型企业。</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">核心价值</h3>
+                    <p class="text-gray-600">降低 60% 人工客服成本，提升 40% 响应速度，客户满意度提升 35%，支持 7×24 小时全天候服务。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">核心功能</h2>
+            <div class="grid grid-cols-4 gap-6">
+                <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all">
+                    <img src="https://ai-public.mastergo.com/ai/img_res/dd58c54988c0a6435b7a5627fc54d6ad.jpg" class="w-full h-48 object-cover rounded-lg mb-6" alt="智能对话">
+                    <h3 class="text-lg font-semibold mb-2">智能对话</h3>
+                    <p class="text-gray-600">支持自然语言理解，准确把握用户意图，提供精准回答</p>
+                </div>
+                <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all">
+                    <img src="https://ai-public.mastergo.com/ai/img_res/16e461ebda405ce11bf9d93e584ad66c.jpg" class="w-full h-48 object-cover rounded-lg mb-6" alt="知识库管理">
+                    <h3 class="text-lg font-semibold mb-2">知识库管理</h3>
+                    <p class="text-gray-600">灵活配置专业知识库，支持多领域知识快速导入</p>
+                </div>
+                <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all">
+                    <img src="https://ai-public.mastergo.com/ai/img_res/80280ee42e5e6884ba31e7719332b9a5.jpg" class="w-full h-48 object-cover rounded-lg mb-6" alt="数据分析">
+                    <h3 class="text-lg font-semibold mb-2">数据分析</h3>
+                    <p class="text-gray-600">实时监控对话质量，提供详细的数据分析报表</p>
+                </div>
+                <div class="tech-card bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all">
+                    <img src="https://ai-public.mastergo.com/ai/img_res/1929753092df5683e4a590cf903680ab.jpg" class="w-full h-48 object-cover rounded-lg mb-6" alt="多渠道接入">
+                    <h3 class="text-lg font-semibold mb-2">多渠道接入</h3>
+                    <p class="text-gray-600">支持微信、网页、APP 等多渠道无缝接入</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">技术架构</h2>
+            <div class="chart-container" id="techChart"></div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">用户反馈</h2>
+            <div class="grid grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <img src="https://ai-public.mastergo.com/ai/img_res/5ac0caa773ccd19d4622dba6352e6581.jpg" class="w-12 h-12 rounded-full object-cover" alt="用户头像">
+                        <div class="ml-4">
+                            <h4 class="font-semibold">张雨萱</h4>
+                            <p class="text-gray-500 text-sm">某电商平台客服总监</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"智能客服机器人极大提升了我们的服务效率，特别是在处理重复性问题时表现出色。系统的持续学习能力也让我们对其未来发展充满信心。"</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <img src="https://ai-public.mastergo.com/ai/img_res/5d35e71c3bdb5403d9c4f2af5dc09e7e.jpg" class="w-12 h-12 rounded-full object-cover" alt="用户头像">
+                        <div class="ml-4">
+                            <h4 class="font-semibold">李明远</h4>
+                            <p class="text-gray-500 text-sm">某金融科技公司 CTO</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"产品的技术架构非常先进，API 接口设计合理，集成过程顺畅。最重要的是，它真的帮我们节省了大量人力成本。"</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <img src="https://ai-public.mastergo.com/ai/img_res/2b250347b6cb2b8ffa1d8545293cfcdb.jpg" class="w-12 h-12 rounded-full object-cover" alt="用户头像">
+                        <div class="ml-4">
+                            <h4 class="font-semibold">王思琪</h4>
+                            <p class="text-gray-500 text-sm">某教育机构运营总监</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"智能对话的准确率令人惊讶，已经可以处理 90% 以上的常见问题。售后团队的支持也非常专业，帮助我们快速搭建了完整的服务体系。"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="font-['Pacifico'] text-2xl text-white mb-6">logo</h3>
+                    <p class="text-gray-400">智能对话解决方案提供商，致力于提升企业服务效率</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">产品</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">智能客服</a></li>
+                        <li><a href="#" class="hover:text-white">知识管理</a></li>
+                        <li><a href="#" class="hover:text-white">数据分析</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">资源</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">开发文档</a></li>
+                        <li><a href="#" class="hover:text-white">API 接口</a></li>
+                        <li><a href="#" class="hover:text-white">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">联系我们</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">sales@company.com</a></li>
+                        <li><a href="#" class="hover:text-white">400-888-8888</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>© 2024 Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const techChart = echarts.init(document.getElementById('techChart'));
+        const option = {
+            animation: false,
+            title: {
+                text: '系统技术架构'
+            },
+            tooltip: {},
+            series: [{
+                type: 'graph',
+                layout: 'force',
+                data: [
+                    {name: '对话引擎', value: 20, category: 0},
+                    {name: 'NLP处理', value: 15, category: 1},
+                    {name: '知识图谱', value: 15, category: 1},
+                    {name: '意图识别', value: 15, category: 1},
+                    {name: '情感分析', value: 15, category: 1},
+                    {name: '对话管理', value: 15, category: 1},
+                    {name: 'API网关', value: 15, category: 2},
+                    {name: '数据分析', value: 15, category: 2},
+                    {name: '监控告警', value: 15, category: 2}
+                ],
+                links: [
+                    {source: '对话引擎', target: 'NLP处理'},
+                    {source: '对话引擎', target: '知识图谱'},
+                    {source: '对话引擎', target: '意图识别'},
+                    {source: '对话引擎', target: '情感分析'},
+                    {source: '对话引擎', target: '对话管理'},
+                    {source: 'API网关', target: '对话引擎'},
+                    {source: '数据分析', target: '对话引擎'},
+                    {source: '监控告警', target: '对话引擎'}
+                ],
+                categories: [
+                    {name: '核心引擎'},
+                    {name: '功能模块'},
+                    {name: '系统服务'}
+                ],
+                roam: true,
+                label: {
+                    show: true,
+                    position: 'right'
+                },
+                force: {
+                    repulsion: 100
+                }
+            }]
+        };
+        techChart.setOption(option);
+    </script>
+</body>
+</html>

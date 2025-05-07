@@ -1,0 +1,86 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Image Management Guide
+
+This guide explains how images are used in the resume website and how to manage them.
+
+## Current Image Sources
+
+All images in [html/personal_website/qiansji_cv.html](mdc:html/personal_website/qiansji_cv.html) are hosted on external services:
+
+1. **Profile and Section Images**: Hosted on MasterGo AI's public image service
+   ```
+   https://ai-public.mastergo.com/ai/img_res/[image-id].jpg
+   ```
+
+2. **Project Demo Videos**: Hosted on Alibaba Cloud OSS
+   ```
+   https://bmgw.oss-cn-shanghai.aliyuncs.com/[path]/[filename].mp4
+   ```
+
+## Image Types and Sizes
+
+The website uses different image sizes and formats for different purposes:
+
+1. **Hero Background**: Large background image (full-width) with gradient overlay
+   ```html
+   <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center" 
+     style="background-image: url('https://ai-public.mastergo.com/ai/img_res/b50f713be9a71e5e8e928bf2c3f62f5c.jpg');">
+   ```
+
+2. **Profile Photo**: Medium-sized image in the About section
+   ```html
+   <img src="https://ai-public.mastergo.com/ai/img_res/54dc21182561c81cd129221642b12548.jpg" 
+     alt="Profile Photo" class="w-full h-auto rounded-lg shadow-lg">
+   ```
+
+3. **Project Cards**: Rectangular images (ratio approx 16:9) for project showcases
+   ```html
+   <img src="https://ai-public.mastergo.com/ai/img_res/085b278baa197b2b4a14cc877a00327a.jpg" 
+     alt="Smart Cockpit Solution" class="w-full h-48 object-cover">
+   ```
+
+4. **Personal Project Images**: Square or rectangular images that take up half the card width
+   ```html
+   <img src="https://ai-public.mastergo.com/ai/img_res/3ae82191c19d9aa040f994aa649cadf9.jpg" 
+     alt="AbleDesk" class="w-1/2 object-cover">
+   ```
+
+## Replacing Images
+
+To replace an image:
+
+1. Upload your new image to your preferred hosting service
+2. Copy the direct URL to the image
+3. Replace the `src` attribute in the corresponding `<img>` tag
+
+Example:
+```html
+<!-- Original -->
+<img src="https://ai-public.mastergo.com/ai/img_res/54dc21182561c81cd129221642b12548.jpg" alt="Profile Photo">
+
+<!-- Replacement -->
+<img src="https://your-new-image-host.com/path/to/new-profile-photo.jpg" alt="Profile Photo">
+```
+
+## Image Best Practices
+
+For optimal performance:
+
+1. **Compression**: Compress images before uploading to reduce file size
+2. **Dimensions**: Match image dimensions to their display size to avoid unnecessary downloads
+   - Hero background: ~1920px wide
+   - Profile photo: ~600px wide
+   - Project thumbnails: ~400-600px wide
+   - Personal project images: ~400px wide
+
+3. **Format**: Use modern formats like WebP where possible, with JPEG as fallback
+4. **Alt Text**: Always include descriptive alt text for accessibility
+
+5. **Lazy Loading**: For future optimization, consider adding the `loading="lazy"` attribute to images below the fold:
+   ```html
+   <img src="image-url" alt="Description" loading="lazy">
+   ```

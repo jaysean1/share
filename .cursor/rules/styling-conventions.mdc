@@ -1,0 +1,54 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Styling Conventions
+
+The website uses Tailwind CSS for styling with some custom extensions and plain CSS for specific animations and effects.
+
+## Tailwind Configuration
+The site uses Tailwind CSS via CDN with a custom configuration that extends the default theme:
+
+```javascript
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#2563eb',      // Primary blue color
+        secondary: '#3b82f6'     // Secondary blue color
+      },
+      borderRadius: {
+        // Custom border radius values
+        'button': '4px'          // Special radius for buttons
+      }
+    }
+  }
+}
+```
+
+## Custom CSS Classes
+Several custom CSS classes are defined for specific effects:
+
+- `.nav-link` - Navigation links with animated underline effect
+- `.fade-in` - Elements that fade in when scrolled into view
+- `.timeline-item` - Timeline styling for experience entries
+- `.visible` - Applied to fade-in elements when they become visible
+
+## Color Scheme
+- Primary: `#2563eb` (Blue)
+- Secondary: `#3b82f6` (Lighter blue)
+- Text: Various grays (Gray-700, Gray-800, Gray-900)
+- Background: White and Gray-50
+
+## Animation Approach
+Animations are implemented using a combination of:
+1. CSS transitions for hover effects
+2. Intersection Observer API in JavaScript for scroll-based animations
+3. JavaScript for number counting animations
+
+## Responsive Design
+The design is responsive with:
+- Mobile-first approach
+- Breakpoints at standard Tailwind sizes (sm, md, lg, xl)
+- Different layouts for various screen sizes (stack on mobile, grid on larger screens)

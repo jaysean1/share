@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google A2A Protocol Introduction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <style>
+        /* Custom highlight style */
+        .highlight {
+            background-color: #fef9c3; /* Tailwind yellow-100 */
+            padding: 0.1em 0.3em;
+            border-radius: 0.25rem;
+            font-weight: 600; /* Semi-bold */
+        }
+        /* Custom blockquote style */
+        blockquote {
+            border-left: 4px solid #d1d5db; /* Tailwind gray-300 */
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #4b5563; /* Tailwind gray-600 */
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans leading-normal tracking-normal">
+
+    <div class="container mx-auto max-w-4xl p-6 bg-white shadow-lg rounded-lg my-10">
+
+        <!-- Hero Image -->
+        <img src="../../public/img/WX20250414-120131@2x.png" alt="Google A2A Hero Image" class="w-full h-auto rounded-lg mb-8 shadow-md">
+
+        <h1 class="text-4xl font-bold text-gray-800 mb-6 flex items-center">
+            <i data-lucide="zap" class="mr-3 text-blue-600"></i>Google A2A is insane! Intro for Google A2A Portal
+        </h1>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i data-lucide="file-text" class="mr-2 text-green-600"></i>Introduction
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                On April 11th, Google livestreamed on YouTube <strong class="text-indigo-700">"Google Cloud Next '24 Developer Keynote: You can just build things"</strong>.
+                Watch here: <a href="https://www.youtube.com/watch?v=xLDSuXD8Mls" target="_blank" class="text-blue-600 hover:underline flex items-center inline-flex">
+                    <i data-lucide="youtube" class="mr-1"></i>YouTube Link <i data-lucide="external-link" class="ml-1 h-4 w-4"></i>
+                </a>
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">The content included:</p>
+            <ul class="list-disc list-inside mb-4 pl-4 text-gray-700 space-y-1">
+                <li>Gemini Models in AI Studio</li>
+                <li>From Prompt to Agent Demo</li>
+                <li>Build Multi-agent systems</li>
+                <li>MLB Hackathon</li>
+                <li>Software Agents</li>
+                <li>MLB Hackathon (重复提及，保留原文)</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                During the process, several tools were released, including <span class="highlight">Vertex AI</span>, <span class="highlight">Agent Development Kit (ADK)</span>, <span class="highlight">Firebase Studio</span>, and <span class="highlight">Veo 2</span>.
+                However, what caught my attention the most was the <strong class="text-indigo-700">A2A Protocol (Agent-to-Agent Protocol)</strong>.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                The <span class="highlight">A2A Protocol</span> is an <strong class="font-semibold">open protocol</strong> designed to achieve <strong class="font-semibold">interoperability and collaboration between AI agents</strong>. The A2A protocol allows AI agents built by different vendors or frameworks to communicate with each other, securely exchange information, and coordinate actions, regardless of their underlying technology.
+            </p>
+            <blockquote class="mb-4">
+                This easily reminds us of the <strong class="text-indigo-700">MCP Protocol (Model Context Protocol)</strong> released by Anthropic last year, which has recently gained popularity. The MCP protocol is designed by Anthropic to provide a consistent interface between AI agents. The MCP protocol allows AI agents to communicate with each other to achieve collaboration and task distribution. The goal of the MCP protocol is to provide a unified interface for AI agents to promote interoperability and collaboration among them. Moreover, many large internet companies have already publicly implemented the MCP protocol, such as Figma, AutoNavi (Gaode Maps), etc.
+            </blockquote>
+            <p class="text-gray-700 leading-relaxed font-semibold italic mb-4">
+                So, what is the difference between <span class="highlight">A2A</span> and <span class="highlight">MCP</span>? What is their relationship? What can we use it for? Let's explain in detail next.
+            </p>
+        </section>
+        <section class="mb-8">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i data-lucide="briefcase" class="mr-2 text-purple-600"></i>A real-world example: candidate sourcing
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">Before diving into complex explanations, let's look at a practical example:</p>
+            <div class="border border-gray-300 rounded-lg shadow-md overflow-hidden my-4 p-2 bg-black">
+                <video controls class="w-full h-auto rounded">
+                    <source src="https://storage.googleapis.com/gweb-developer-goog-blog-assets/original_videos/A2A_demo_v4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                     <a href="https://storage.googleapis.com/gweb-developer-goog-blog-assets/original_videos/A2A_demo_v4.mp4" target="_blank" class="text-blue-400 hover:underline">Watch Video</a>
+                </video>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-4 bg-blue-50 p-4 rounded-lg border border-blue-200">
+                The process of hiring a software engineer can be significantly simplified through <span class="highlight">A2A collaboration</span>. Within a unified interface (like Agentspace), a user (e.g., a hiring manager) can task their agent to find candidates matching a job listing, location, and skillset. The agent then interacts with other specialized agents to source potential candidates. After receiving these suggestions, the user can direct their agent to schedule further interviews, streamlining the candidate sourcing process. Once the interview process is complete, another agent can be engaged to facilitate background checks. This is just one example of how AI agents need to collaborate across systems to find a qualified job candidate.
+            </p>
+        </section>
+
+        <section class="mb-8">
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i data-lucide="settings-2" class="mr-2 text-orange-600"></i>How A2A Works
+            </h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                The example above utilizes the <span class="highlight">A2A protocol</span> to achieve collaboration between multiple agents. Now let's see how this is implemented.
+            </p>
+            <div class="border border-gray-300 rounded-lg shadow-md overflow-hidden my-4">
+                 <!-- Correct relative path: ../../public/img/a2a_work.png -->
+                 <img src="../../public/img/a2a_work.png" alt="A2A Workflow Diagram" class="w-full h-auto">
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                A2A facilitates communication between a <strong class="font-semibold">"Client Agent"</strong> and a <strong class="font-semibold">"Remote Agent"</strong>. The Client Agent is responsible for formulating and communicating tasks, while the Remote Agent executes them. This interaction involves several key functions:
+            </p>
+            <div class="space-y-4">
+                <div class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="search" class="mr-3 text-blue-500 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-800">Capability Discovery</h4>
+                        <p class="text-gray-600">Agents can advertise their capabilities using JSON-formatted <span class="highlight">"Agent Cards"</span>, enabling Client Agents to identify the most suitable agent for a task.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="list-checks" class="mr-3 text-green-500 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-800">Task Management</h4>
+                        <p class="text-gray-600">Communication between Client and Remote Agents is oriented towards <strong class="font-semibold">task completion</strong>, with agents working together to fulfill the end-user's request.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="users" class="mr-3 text-yellow-500 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-800">Collaboration</h4>
+                        <p class="text-gray-600">Agents can send messages to each other to convey context, replies, artifacts, or user instructions.</p>
+                    </div>
+                </div>
+                 <div class="bg-gray-100 p-4 rounded-lg border border-gray-200 flex items-start">
+                    <i data-lucide="layout-template" class="mr-3 text-red-500 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-800">User Experience Negotiation</h4>
+                        <p class="text-gray-600">Each message contains <span class="highlight">"Parts"</span>, which are fully formed content fragments, like a generated image. Each part has a specified content type.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                 <i data-lucide="git-compare" class="mr-2 text-cyan-600"></i>What's the Difference Between A2A and MCP?
+            </h3>
+             <p class="text-gray-700 leading-relaxed mb-4">
+                To better understand the relationship between <span class="highlight">A2A</span> and <span class="highlight">MCP</span>, let's use the scenario of a large symphony orchestra performance to elaborate:
+            </p>
+            <div class="bg-teal-50 p-4 rounded-lg border border-teal-200 mb-4">
+                <h4 class="font-semibold text-lg text-teal-800 mb-2 flex items-center"><i data-lucide="music" class="mr-2"></i>Scenario: Symphony Orchestra</h4>
+                <p class="text-teal-700 mb-2">
+                    Imagine a magnificent concert hall capable of seating thousands, where a symphony orchestra of nearly a hundred skilled musicians is preparing to perform Beethoven's Symphony No. 5. The audience anticipates a soul-stirring, perfectly harmonious performance. You are the conductor standing among the musicians, leading the orchestra.
+                </p>
+                <!-- Visual representation using Lucide icons -->
+                <div class="grid md:grid-cols-2 gap-4 my-4">
+                    <!-- A2A Visual Representation -->
+                    <div class="bg-blue-100 p-4 rounded-lg border border-blue-300 flex flex-col items-center">
+                        <div class="bg-white rounded-full p-3 shadow-md mb-3">
+                            <i data-lucide="wand-2" class="text-blue-600 h-10 w-10"></i>
+                        </div>
+                        <h5 class="font-bold text-blue-800">A2A</h5>
+                        <div class="flex items-center mt-2">
+                            <span class="font-semibold text-blue-700">The Conductor's Baton</span>
+                            <i data-lucide="arrow-right" class="mx-2 text-blue-500 h-4 w-4"></i>
+                            <i data-lucide="zap" class="text-blue-600 h-5 w-5"></i>
+                        </div>
+                        <p class="text-center text-blue-700 mt-2 text-sm">Coordinates communication and actions</p>
+                    </div>
+                    
+                    <!-- MCP Visual Representation -->
+                    <div class="bg-green-100 p-4 rounded-lg border border-green-300 flex flex-col items-center">
+                        <div class="flex justify-center space-x-1 mb-3">
+                            <div class="bg-white rounded-full p-2 shadow-md">
+                                <i data-lucide="file-text" class="text-green-600 h-8 w-8"></i>
+                            </div>
+                            <div class="bg-white rounded-full p-2 shadow-md">
+                                <i data-lucide="music-2" class="text-green-600 h-8 w-8"></i>
+                            </div>
+                        </div>
+                        <h5 class="font-bold text-green-800">MCP</h5>
+                        <div class="flex items-center mt-2">
+                            <span class="font-semibold text-green-700">Sheet Music & Instruments</span>
+                            <i data-lucide="arrow-right" class="mx-2 text-green-500 h-4 w-4"></i>
+                            <i data-lucide="file-code" class="text-green-600 h-5 w-5"></i>
+                        </div>
+                        <p class="text-center text-green-700 mt-2 text-sm">Standardized tools and instructions</p>
+                    </div>
+                </div>
+                
+                <!-- How they work together -->
+                <div class="bg-purple-50 p-3 rounded-lg border border-purple-200 mt-3">
+                    <div class="flex items-center justify-center mb-2">
+                        <div class="flex items-center bg-blue-100 px-3 py-1 rounded-l-full">
+                            <i data-lucide="wand-2" class="text-blue-600 h-5 w-5 mr-1"></i>
+                            <span class="font-bold text-blue-700">A2A</span>
+                        </div>
+                        <div class="bg-gray-200 px-2 py-1">
+                            <i data-lucide="plus" class="text-gray-600 h-4 w-4"></i>
+                        </div>
+                        <div class="flex items-center bg-green-100 px-3 py-1 rounded-r-full">
+                            <i data-lucide="music-2" class="text-green-600 h-5 w-5 mr-1"></i>
+                            <span class="font-bold text-green-700">MCP</span>
+                        </div>
+                    </div>
+                    <p class="text-center text-purple-700 text-sm">
+                        Standardized protocols ensure compatibility between agents (musicians)
+                        <br>just like standardized baton movements, instruments, and sheet music.
+                    </p>
+                </div>
+            </div>
+             <p class="text-gray-700 leading-relaxed mb-4">
+                <strong class="font-semibold">In Simple Terms:</strong>
+            </p>
+             <ul class="list-disc list-inside mb-4 pl-4 text-gray-700 space-y-1">
+                <li>You (Musician Agent) need the <strong class="font-semibold">Sheet Music/Instrument (part of MCP - instruction)</strong> to tell you the specific music to play.</li>
+                <li>You need to coordinate the musicians, having them play according to the sheet music, ultimately producing beautiful music. The way you interact is the <strong class="font-semibold">Conductor's Baton (A2A)</strong>.</li>
+            </ul>
+
+             <div class="border border-gray-300 rounded-lg shadow-md overflow-hidden my-4">
+                 <!-- Adjusting relative path assuming html/a2a/index.html -->
+                 <img src="../../public/img/mcp_a2a.png" alt="MCP vs A2A Diagram" class="w-full h-auto">
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 my-6">
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <h4 class="font-semibold text-lg text-blue-800 mb-2 flex items-center"><i data-lucide="file-spreadsheet" class="mr-2"></i>MCP (Model Context Protocol)</h4>
+                    <p class="text-blue-700 mb-2">For <strong class="font-semibold">tools and resources</strong>.</p>
+                    <p class="text-blue-700 mb-2">Connect agents to tools, APIs, and resources with <strong class="font-semibold">structured inputs/outputs</strong>.</p>
+                    <p class="text-blue-700">Google ADK supports MCP tools. Enabling wide range of MCP servers to be used with agents.</p>
+                </div>
+                 <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                    <h4 class="font-semibold text-lg text-green-800 mb-2 flex items-center"><i data-lucide="zap" class="mr-2"></i>A2A (Agent2Agent Protocol)</h4>
+                     <p class="text-green-700 mb-2">For <strong class="font-semibold">agent-agent collaboration</strong>.</p>
+                     <p class="text-green-700 mb-2">Dynamic, multimodal communication between different agents <strong class="font-semibold">without sharing memory, resources, and tools</strong>.</p>
+                     <p class="text-green-700 mb-2">Open standard driven by community.</p>
+                     <p class="text-green-700">Samples available using Google ADK, LangGraph, Crew.AI</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i data-lucide="help-circle" class="mr-2 text-red-600"></i>Why A2A?
+            </h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Why do we still need the <span class="highlight">A2A protocol</span> when we already have the <span class="highlight">MCP protocol</span>?
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4 font-semibold">Let's look at the limitations of MCP:</p>
+             <ol class="list-decimal list-inside mb-4 pl-4 text-gray-700 space-y-2">
+                <li><strong class="font-semibold">MCP Count Limit:</strong> The number of MCPs that can be hosted in a single agent is limited (e.g., Cursor's limit is around 40), meaning you cannot add MCPs indefinitely within one agent.</li>
+                <li><strong class="font-semibold">Context Handling Capability Limit:</strong> In long-running tasks (like coding, debugging), the performance of a single chat decreases as the context grows, and the model might lose focus or forget previous instructions.</li>
+                <li><strong class="font-semibold">Long Task Tracking Limit:</strong> Current MCP struggles with tasks that require waiting for hours or even days (like recruitment, customer service).</li>
+                <li><strong class="font-semibold">Page Rendering Limit:</strong> The agent's display rendering needs to happen locally; results from the client-side cannot be obtained via embedding, limiting expressiveness.</li>
+             </ol>
+             <div class="border border-gray-300 rounded-lg shadow-md overflow-hidden my-4">
+                 <!-- Adjusting relative path assuming html/a2a/index.html -->
+                 <img src="../../public/img/agentic_application.png" alt="Agentic Application Diagram" class="w-full h-auto">
+             </div>
+             <p class="text-gray-700 leading-relaxed mb-4 bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                Precisely because of these problems and limitations, the <span class="highlight">A2A protocol</span> emerged. It can effectively solve the above issues, thus enabling the solution described at the beginning. Next, we will try to build a customer service agent ourselves to implement a complete customer service process.
+             </p>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Follow my channel, and in the next share, I will introduce the design solutions of customer service systems from various major companies, examining how their current customer service agent systems handle complex, long-process consumer complaint tasks.
+             </p>
+         </section>
+         <section>
+              <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                 <i data-lucide="shield-check" class="mr-2 text-indigo-600"></i>Core Design Principles of A2A
+             </h3>
+              <p class="text-gray-700 leading-relaxed mb-4">Finally, let's look at the 5 core design principles of A2A:</p>
+             <div class="space-y-3">
+                <div class="flex items-start"><i data-lucide="brain-circuit" class="mr-3 text-indigo-500 mt-1 flex-shrink-0"></i><p><strong class="font-semibold">1. Embrace Agent Capabilities:</strong> A2A focuses on enabling agents to collaborate in natural, unstructured ways, even if they don't share memory, tools, and context.</p></div>
+                <div class="flex items-start"><i data-lucide="layers" class="mr-3 text-indigo-500 mt-1 flex-shrink-0"></i><p><strong class="font-semibold">2. Build on Existing Standards:</strong> The protocol is built on existing popular standards (HTTP, SSE, JSON-RPC), making it easier to integrate with the IT stacks enterprises already use daily.</p></div>
+                <div class="flex items-start"><i data-lucide="lock" class="mr-3 text-indigo-500 mt-1 flex-shrink-0"></i><p><strong class="font-semibold">3. Secure by Default:</strong> Designed to support enterprise-grade authentication and authorization, aligning with OpenAPI's authentication schemes upon release.</p></div>
+                <div class="flex items-start"><i data-lucide="timer" class="mr-3 text-indigo-500 mt-1 flex-shrink-0"></i><p><strong class="font-semibold">4. Support Long-Running Tasks:</strong> Designed flexibly to support scenarios ranging from quick tasks to in-depth research that might take hours or even days.</p></div>
+                <div class="flex items-start"><i data-lucide="image-plus" class="mr-3 text-indigo-500 mt-1 flex-shrink-0"></i><p><strong class="font-semibold">5. Modality Agnostic:</strong> A2A supports various modalities, including audio and video streams, not limited to text.</p></div>
+             </div>
+         </section>
+
+         <section>
+              <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                 <i data-lucide="book-marked" class="mr-2 text-gray-600"></i>Summary
+             </h3>
+              <p class="text-gray-700 leading-relaxed">
+                The <span class="highlight">A2A protocol</span> provides an <strong class="font-semibold">open standard</strong> for collaboration between agents, thereby enhancing their capabilities and flexibility. The emergence of the A2A protocol can be seen as an <strong class="font-semibold">evolution</strong> of the <span class="highlight">MCP protocol</span>, better meeting the needs for collaboration among agents.
+             </p>
+         </section>
+      </div>
+
+     <script>
+        // Make sure Lucide is loaded before creating icons
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+                console.log('Lucide icons initialized');
+            } else {
+                console.error('Lucide library not loaded');
+            }
+        });
+     </script>
+ </body>
+ </html>
